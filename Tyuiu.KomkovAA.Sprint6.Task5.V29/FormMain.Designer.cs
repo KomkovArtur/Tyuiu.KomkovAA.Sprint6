@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             dataGridViewRes = new DataGridView();
             num = new DataGridViewTextBoxColumn();
             Res = new DataGridViewTextBoxColumn();
@@ -64,9 +65,10 @@
             // 
             // buttonRes
             // 
-            buttonRes.Location = new Point(608, 154);
+            buttonRes.Image = (Image)resources.GetObject("buttonRes.Image");
+            buttonRes.Location = new Point(608, 138);
             buttonRes.Name = "buttonRes";
-            buttonRes.Size = new Size(94, 29);
+            buttonRes.Size = new Size(115, 45);
             buttonRes.TabIndex = 1;
             buttonRes.Text = "button1";
             buttonRes.UseVisualStyleBackColor = true;
