@@ -22,5 +22,11 @@ namespace Tyuiu.KomkovAA.Sprint6.Task6.V14
         {
             textBoxRes.Text = ds.CollectTextFromFile(openFilePath);
         }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
     }
 }

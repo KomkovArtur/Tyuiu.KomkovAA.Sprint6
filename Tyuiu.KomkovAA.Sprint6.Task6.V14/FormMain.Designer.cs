@@ -70,6 +70,7 @@
             buttonHelp.Text = "button3";
             toolTip1.SetToolTip(buttonHelp, "Информация о разработчике ");
             buttonHelp.UseVisualStyleBackColor = true;
+            buttonHelp.Click += buttonHelp_Click;
             // 
             // textBoxIn
             // 
