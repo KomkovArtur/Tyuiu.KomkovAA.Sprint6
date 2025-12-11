@@ -5,30 +5,32 @@ namespace Tyuiu.KomkovAA.Sprint6.Task7.V21.Lib
     {
         public int[,] GetMatrix(string path)
         {
-            string[] lines = File.ReadAllLines(path);
+            string fileData = File.ReadAllText(path);
+            fileData = fileData.Replace('\n', '\r');
+            string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
-            int rowCount = lines.Length;
-            int colCount = lines[0].Split(";").Length;
+            int rows = lines.Length;
+            int columns = lines[0].Split(';').Length;
 
-            int[,] matrix = new int[rowCount, colCount];
+            int[,] arrayValues = new int[rows, columns];
 
-            for (int i = 0; i < rowCount; i++)
+            for (int r = 0; r < rows; r++)
             {
-                string[] line = lines[i].Split(";");
-                for (int j = 0; j < colCount; j++)
+                string[] line_r = lines[r].Split(';');
+                for (int c = 0; c < columns; c++)
                 {
-                    matrix[i, j] = int.Parse(line[j]);
+                    arrayValues[r, c] = Convert.ToInt32(line_r[c]);
                 }
             }
-            int col = 7;
-            for (int r = 0; r < rowCount; r++)
+
+            for (int r = 0; r < rows; r++)
             {
-                if (col < colCount)
+                if (arrayValues[r, 7] != 5)
                 {
-                    
+                    arrayValues[r, 7] = -1;
                 }
             }
-            return matrix;
+            return arrayValues;
         }
     }
 }
